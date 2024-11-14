@@ -1,21 +1,32 @@
 
-
 const express = require("express");
-const app = express();
+ const app = express();
 
+ app.get("/",(req,res)=>{
+   res.send("this is home page ")
+ })
 
-app.get("/",(req,res)=>{
-   res.send("this is get Response to the user!!!!!");
-})
+ app.get("/about",(req,res)=>{
+   res.send("about page data")
+ })
 
-app.get("/save",(req,res)=>{
-   res.send("get requset by user send by server")
-})
+ app.post("/about",(req,res)=>{
+   res.send("About post Request data!!!")
+ })
 
-app.post("/save",(req,res)=>{
-   res.send("this os post res by serv er to user")
-})
+ app.get("/services",(req,res)=>{
+    res.send("our company server!!!!")
+ })
 
-app.listen(8000,()=>{
-   console.log("server run on 8000 port")
-})
+ app.get("/images/photos/gellery",(req,res)=>{
+      const Data={
+         "rollno":121,
+         "name":"sachin",
+         "city":"Bhopal"
+      }
+      res.send(Data);
+ })
+
+ app.listen(8000,()=>{
+   console.log("server run on 8000")
+ });
