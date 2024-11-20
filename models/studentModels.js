@@ -1,13 +1,9 @@
+const mongoose = require("mongoose");
 
-
-const mongoose =require("mongoose");
-const stuSchema=new mongoose.Schema({
-
-           rollno:Number,
-           name:String,
-           city:String,
-           fees:Number
-          
+const StuSchema = new mongoose.Schema({
+    rollno:Number,
+    name:String,
+    city:String,
+    fees:Number
 })
-
-module.exports=mongoose.model("student",stuSchema)  //ODM
+module.exports = mongoose.model("student",StuSchema)
